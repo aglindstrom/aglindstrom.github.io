@@ -1,0 +1,166 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body{
+	background-image: url("p1_BG.png");
+}
+
+#header{
+	/*position: fixed;*/
+	background-color: #A1A1A1;
+	width: 100%;
+}
+
+span.logo{
+	margin-left: 25%;
+	height: 150px;
+	width: 10%;
+}
+
+span.headAcc{
+
+}
+
+div.accent{
+	z-index: 2;
+	position: relative;
+	height: .25em;
+	width: 100%;
+	background-color: #6f2825;
+}
+
+div.navbar{
+	z-index: 1;
+	position: relative;
+	height: 35px;
+	width: 100%;
+	background-color: #3F3F3F;
+}
+
+div.navbar > ul{
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	text-align: center;
+	box-shadow: 0em .25em 1em .001em black;
+}
+
+div.navbar > ul > li{
+	margin-left: -.15%;
+	margin-right: -.15%;
+	height: 35px;
+	border: 0px;
+	padding-left: 7%;
+	padding-right: 7%;
+	display: inline-table;
+	color: #F3F3F3;
+	font-family: Ubuntu, sans-serif;
+	font-size: 20pt;
+}
+
+div.navbar > ul >li:hover{
+	background-color: #4A4A4A;
+}
+
+#sidebar{
+	z-index: 0;
+	position: relative;
+	margin-left: 17%;
+	width: 10%;
+	height: 50em;
+	background-color: #5c4b40;
+	box-shadow: 0em 0em 1em .25em black;
+}
+
+#sidebar > ul{
+	text-align: left;
+}
+
+#sidebar > ul > li{
+	padding-bottom: 5%;
+	padding-top: 5%;
+	padding-left: 5%;
+	display: block;
+	color: #F3F3F3;
+	font-family: Ubuntu, sans-serif;
+	font-size: 15pt;
+}
+#sidebar > ul > li:hover{
+	background-color: #6c5B50;
+}
+
+#submenu{
+	margin-left: -95px;
+	margin-right: -95px;
+}
+
+#submenu > ul{
+	margin-top: 5px;
+	text-align: center;
+}
+
+#submenu > ul > li{
+	border-bottom: 5px;
+	border-color: #000000;
+	display: block;
+	background-color: #3F3F3F;
+	color: #F3F3F3;
+	font-family: Ubuntu, sans-serif;
+	font-size: 20pt;
+}
+
+#submenu > ul >li:hover{
+	background-color: #4A4A4A;
+}
+
+div.body{
+	/* Set Z-Index */
+	position: relative;
+	z-index: -2;
+
+	/* Box Definition */
+	width: 50%;
+	height: 1000px;
+	
+	/* Dimensions */
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: -60em;
+	padding: 10%;
+	padding-top: 20%;
+
+	/* Set Color */
+	background-color: #A0A0A0;
+
+	/* Shadow */
+	box-shadow: 0em 0em 3em 0em black;
+}
+
+p.pBlock1{
+	position: relative;
+	z-index: -1;
+	color: #EDEDED;
+	margin: 1%;
+	font-family: Ubuntu, sans-serif;
+	font-size: 20pt;
+}
+
+h1.hBlock1{
+	position: relative;
+	z-index: -1;
+
+	margin-bottom: 2%;
+	
+	color: #EDEDED;
+	
+	font-family: Ubuntu, sans-serif;
+	font-size: 40pt;
+}
+
+::selection{
+	background-color: #5c4b40;
+	color: #AA0000;
+};
