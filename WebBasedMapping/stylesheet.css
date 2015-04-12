@@ -1,0 +1,135 @@
+*{
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+body{
+	background-color: #111155;
+	background-image: url("./bg_max.png");
+}
+
+#wrap{
+	width: 100%;
+}
+
+#accent{
+	height: 6em;
+	width: 100%;
+	background-color: #00527A;
+}
+
+#header{
+	height: 5em;
+	width: 100%;
+	border: .5em;
+	border-color: #BABABA;
+	background-color: #FEFEFE;	
+}
+
+#navbar{
+	position: fixed;
+	text-align: center;
+	background-color: inherit;
+	width: inherit;
+	height: inherit;
+	box-shadow: 0em 0em 5em 0em #000;
+}
+
+#navbar > ul{
+	display: inline;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+#navbar > ul > li{
+	display: inline-block;
+	padding-left: 10%;
+	padding-right: 10%;
+	line-height: 2;
+	color: #303030;
+	font-family: Arial, sans-serif;
+	font-size: 30pt;
+  	transition: all 0.2s;
+}
+
+#navbar > ul > li:hover{
+	color: #80FFFF;
+	background-color: #00527A;
+	box-shadow: 0em 0em 1em 0em #000;
+}
+
+#navbar > ul > li > ul{
+	position: absolute;
+	margin-left: -4.75em;
+	width: 24.40%;
+	top: 100%;
+	opacity: 0;
+	box-shadow: none;
+  	display: none;
+  	visibility: hidden;
+  	-moz-transition: opacity 0.2s;
+}
+
+#navbar > ul > li > ul > li{
+	width: 100%;
+	display: block;
+	background-color: #00527A; 
+  	color:#80FFFF;
+  	transition: all 0.2s;
+}
+
+#navbar > ul > li > ul > li:hover{
+	background-color: #FEFEFE;
+  	color:#303030;
+}
+
+#navbar > ul > li:hover > ul{
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+
+#bodybacking{
+	width:50%;
+	height: 200em;
+	margin-left: 25%;
+	background-color: #00527A;
+}
+
+#body{
+	width: 92%;
+	height: 85%;
+	margin-left: 2%;
+	margin-top: -10%;
+	padding-top: 15%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: #FEFEFE;
+	box-shadow: 0em 0em 2em 0em black;
+}
+
+#body > h1{
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-weight: bolder;
+	font-size: 25pt;
+	color: #303030;
+}
+
+#body > p{
+	margin-left: 15%;
+	margin-top: 2.5%;
+	margin-right: 15%;
+	text-indent: 5%;
+	font-family: Arial, sans-serif;
+	font-size: 15pt;
+	line-height: 1.5;
+	color: #303030;
+}
+
+#footer{
+	height: 15em;
+	width: 100%;
+}
