@@ -1,0 +1,47 @@
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url("BG_1.png");
+}
+
+#overlay{
+	position: absolute;
+	top: 69px;
+	width: 100%;
+	height: 2204px;
+	background-image: url("map.png");
+}
+
+.DiamondButton{
+	position: absolute;
+	width: 210px;
+	height: 210px;
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	background-color: #FFF;
+	opacity: 0;
+}
+
+.DiamondButton:hover{
+	background-color: #62a2c0;
+	opacity: .25;
+}
+
+.CircleButton
+{
+	position: absolute;
+	width: 265px;
+	height: 265px;
+	border-radius: 100%;
+	background-color: #FFF;
+	opacity: 0;
+}
+
+.CircleButton:hover{
+	background-color: #62a2c0;
+	opacity: .25;
+}
