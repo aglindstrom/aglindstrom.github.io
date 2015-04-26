@@ -24,6 +24,8 @@ body{
 	-moz-transform: rotate(45deg);
 	background-color: #FFF;
 	opacity: 0;
+
+	transition: all .2s;
 }
 
 .DiamondButton:hover{
