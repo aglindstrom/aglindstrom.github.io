@@ -11,7 +11,7 @@ body{
 #overlay{
 	position: absolute;
 	top: 69px;
-	width: 100%;
+	width: 1920px;
 	height: 2204px;
 	background-image: url("map.png");
 }
@@ -22,7 +22,7 @@ body{
 	height: 210px;
 	transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
-	background-color: #FFF;
+	background-color: #62a2c0;
 	opacity: 0;
 
 	transition: all .2s;
@@ -39,8 +39,10 @@ body{
 	width: 265px;
 	height: 265px;
 	border-radius: 100%;
-	background-color: #FFF;
+	background-color: #62a2c0;
 	opacity: 0;
+
+	transition: all .2s;
 }
 
 .CircleButton:hover{
