@@ -16,7 +16,10 @@
 	width: 100%;
 	background-color: #545454;
 
+	-webkit-transition: top .2s;
 	-moz-transition: top .2s;
+	-o-transition: top .2s;
+	transitrion: top .2s;
 }
 
 #header > div > ul{
