@@ -1,0 +1,41 @@
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#header{
+	position: fixed;
+	height: 50px;
+	width: 100%;
+}
+
+#header > div{
+	position: relative;
+	top: -51px;
+	width: 100%;
+	background-color: #545454;
+
+	-moz-transition: top .2s;
+}
+
+#header > div > ul{
+	text-align: center;
+}
+
+#header > div > ul > a {
+	text-decoration: none;
+}
+
+#header > div > ul > a > li{
+	border: 0px;
+	padding-left: 7%;
+	padding-right: 7%;
+	display: inline-table;
+	font-family: Arial, sans-serif;
+	font-size: 20pt;
+}
+
+#header:hover > div{
+	top: 0px;
+}
