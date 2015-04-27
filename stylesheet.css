@@ -49,3 +49,19 @@ body{
 	background-color: #62a2c0;
 	opacity: .25;
 }
+
+.CircleButtonSmall{
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	border-radius: 100%;
+	background-color: #7ef0ac;
+	opacity: 0;
+
+	transition: all .2s;
+}
+
+.CircleButtonSmall:hover{
+	background-color: #7ef0ac;
+	opacity: .25;
+}
