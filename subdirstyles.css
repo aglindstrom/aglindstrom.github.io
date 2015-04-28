@@ -3,6 +3,9 @@
 	margin: 0;
 	padding: 0;
 }
+body{
+	background: url("bg.png");
+}
 
 #header{
 	position: fixed;
@@ -13,13 +16,15 @@
 #header > div{
 	position: relative;
 	top: -51px;
-	width: 100%;
+	width: 110%;
 	background-color: #545454;
+	box-shadow: 0 0 2em 0 #4bafdd;
 
 	-webkit-transition: top .2s;
 	-moz-transition: top .2s;
 	-o-transition: top .2s;
 	transitrion: top .2s;
+	transition-timing-function: ease;
 }
 
 #header > div > ul{
@@ -32,13 +37,31 @@
 
 #header > div > ul > a > li{
 	border: 0px;
-	padding-left: 7%;
-	padding-right: 7%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-bottom-color: #FF4F4F;
+	padding-left: 10%;
+	padding-right: 10%;
 	display: inline-table;
+	color: #F0F0F0;
 	font-family: Arial, sans-serif;
 	font-size: 20pt;
+	background-color: rgba(155,155,155,0.0);
+
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transitrion: background-color .2s;
+	transition-timing-function: ease;
 }
 
 #header:hover > div{
 	top: 0px;
+}
+
+#header:hover > div > ul > a > li:hover{
+	background-color: rgba(155,155,155,0.5);
+}
+#header> div > ul > a > li:visited{
+	color: #F0F0F0;
 }
