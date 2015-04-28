@@ -55,13 +55,13 @@ body{
 	width: 125px;
 	height: 125px;
 	border-radius: 100%;
-	background-color: #7ef0ac;
+	background-color: #57d6b7;
 	opacity: 0;
 
 	transition: background-color .2s, opacity .2s;
 }
 
 .CircleButtonSmall:hover{
-	background-color: #7ef0ac;
+	background-color: #57d6b7;
 	opacity: .25;
 }
