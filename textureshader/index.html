@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+		<title> TextureShader.cpp </title>
 		<link rel = "stylesheet" href = "../subdirstyles.css"/>
 	</head>
 	<body>
@@ -21,5 +22,546 @@
 				</ul>
 			</div>
 		</div>
+		<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #cd2828; font-weight: bold">#include &quot;textureshader.h&quot;</span>
+
+<span style="color: #d0d0d0">TextureShader::TextureShader()</span>
+<span style="color: #d0d0d0">{</span>
+
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #d0d0d0">TextureShader::TextureShader(</span><span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">TextureShader&amp;</span> <span style="color: #d0d0d0">other)</span>
+<span style="color: #d0d0d0">{</span>
+
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #d0d0d0">TextureShader::~TextureShader()</span>
+<span style="color: #d0d0d0">{</span>
+
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">TextureShader::Initialize(OGL*</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #d0d0d0">HWND</span> <span style="color: #d0d0d0">hwnd)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">result;</span>
+
+	<span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">InitializeShader(</span><span style="color: #ed9d13">&quot;texture.vs&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;texture.ps&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #d0d0d0">hwnd);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!result)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">TextureShader::Shutdown(OGL*</span> <span style="color: #d0d0d0">openGL)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">ShutdownShader(openGL);</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">TextureShader::SetShader(OGL*</span> <span style="color: #d0d0d0">openGL)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">openGL-&gt;glUseProgram(m_shaderProgram);</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">TextureShader::InitializeShader(</span><span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">vertexShader,</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">pixelShader,</span> <span style="color: #d0d0d0">OGL*</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #d0d0d0">HWND</span> <span style="color: #d0d0d0">hwnd)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">vertexShaderBuffer;</span>
+	<span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">pixelShaderBuffer;</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">status;</span>
+
+	<span style="color: #d0d0d0">vertexShaderBuffer</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">LoadShaderSourceFile(vertexShader);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!vertexShaderBuffer)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">pixelShaderBuffer</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">LoadShaderSourceFile(pixelShader);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!pixelShaderBuffer)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">m_vertexShader</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glCreateShader(GL_VERTEX_SHADER);</span>
+	<span style="color: #d0d0d0">m_pixelShader</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glCreateShader(GL_FRAGMENT_SHADER);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glShaderSource(m_vertexShader,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">&amp;vertexShaderBuffer,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #d0d0d0">openGL-&gt;glShaderSource(m_pixelShader,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">&amp;pixelShaderBuffer,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">);</span>
+
+	<span style="color: #6ab825; font-weight: bold">delete</span><span style="color: #d0d0d0">[]</span> <span style="color: #d0d0d0">vertexShaderBuffer;</span>
+	<span style="color: #d0d0d0">vertexShaderBuffer</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #6ab825; font-weight: bold">delete</span><span style="color: #d0d0d0">[]</span> <span style="color: #d0d0d0">pixelShaderBuffer;</span>
+	<span style="color: #d0d0d0">pixelShaderBuffer</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glCompileShader(m_vertexShader);</span>
+	<span style="color: #d0d0d0">openGL-&gt;glCompileShader(m_pixelShader);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetShaderIV(m_vertexShader,</span> <span style="color: #d0d0d0">GL_COMPILE_STATUS,</span> <span style="color: #d0d0d0">&amp;status);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(status</span> <span style="color: #d0d0d0">!=</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">OutputShaderErrorMessage(openGL,</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #d0d0d0">m_vertexShader,</span> <span style="color: #d0d0d0">vertexShader);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetShaderIV(m_pixelShader,</span> <span style="color: #d0d0d0">GL_COMPILE_STATUS,</span> <span style="color: #d0d0d0">&amp;status);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(status</span> <span style="color: #d0d0d0">!=</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">OutputShaderErrorMessage(openGL,</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #d0d0d0">m_pixelShader,</span> <span style="color: #d0d0d0">pixelShader);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">m_shaderProgram</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glCreateProgram();</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glAttachShader(m_shaderProgram,</span> <span style="color: #d0d0d0">m_vertexShader);</span>
+	<span style="color: #d0d0d0">openGL-&gt;glAttachShader(m_shaderProgram,</span> <span style="color: #d0d0d0">m_pixelShader);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glBindAttribLocation(m_shaderProgram,</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;inputPosition&quot;</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #d0d0d0">openGL-&gt;glBindAttribLocation(m_shaderProgram,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;inputTexCoord&quot;</span><span style="color: #d0d0d0">);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glLinkProgram(m_shaderProgram);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetProgramIV(m_shaderProgram,</span> <span style="color: #d0d0d0">GL_LINK_STATUS,</span> <span style="color: #d0d0d0">&amp;status);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(status</span> <span style="color: #d0d0d0">!=</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">OutputLinkerErrorMessage(openGL,</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #d0d0d0">m_shaderProgram);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">TextureShader::LoadShaderSourceFile(</span><span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">fileName)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">ifstream</span> <span style="color: #d0d0d0">fin;</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">fileSize;</span>
+	<span style="color: #6ab825; font-weight: bold">char</span> <span style="color: #d0d0d0">input;</span>
+	<span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">buffer;</span>
+
+	<span style="color: #d0d0d0">fin.open(fileName);</span>
+
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(fin.fail())</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">fileSize</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #d0d0d0">fin.get(input);</span>
+
+	<span style="color: #6ab825; font-weight: bold">while</span> <span style="color: #d0d0d0">(!fin.eof())</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">fileSize++;</span>
+		<span style="color: #d0d0d0">fin.get(input);</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">fin.close();</span>
+
+	<span style="color: #d0d0d0">buffer</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">[fileSize</span> <span style="color: #d0d0d0">+</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">];</span>
+
+	<span style="color: #d0d0d0">fin.open(fileName);</span>
+
+	<span style="color: #d0d0d0">fin.read(buffer,</span> <span style="color: #d0d0d0">fileSize);</span>
+
+	<span style="color: #d0d0d0">fin.close();</span>
+
+	<span style="color: #d0d0d0">buffer[fileSize]</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&#39;\0&#39;</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">buffer;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">TextureShader::OutputShaderErrorMessage(OGL*</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #d0d0d0">HWND</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #6ab825; font-weight: bold">unsigned</span> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">shaderId,</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">fileName)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">logSize,</span> <span style="color: #d0d0d0">i;</span>
+	<span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">infoLog;</span>
+	<span style="color: #d0d0d0">std::ofstream</span> <span style="color: #d0d0d0">fout;</span>
+	<span style="color: #6ab825; font-weight: bold">wchar_t</span> <span style="color: #d0d0d0">newString[</span><span style="color: #3677a9">128</span><span style="color: #d0d0d0">];</span>
+	<span style="color: #6ab825; font-weight: bold">unsigned</span> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">error,</span> <span style="color: #d0d0d0">convertedChars;</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetShaderIV(shaderId,</span> <span style="color: #d0d0d0">GL_INFO_LOG_LENGTH,</span> <span style="color: #d0d0d0">&amp;logSize);</span>
+
+	<span style="color: #d0d0d0">logSize++;</span>
+
+	<span style="color: #d0d0d0">infoLog</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">[logSize];</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!infoLog)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetShaderInfoLog(shaderId,</span> <span style="color: #d0d0d0">logSize,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">infoLog);</span>
+
+	<span style="color: #d0d0d0">fout.open(</span><span style="color: #ed9d13">&quot;shader-error.txt&quot;</span><span style="color: #d0d0d0">);</span>
+
+	<span style="color: #6ab825; font-weight: bold">for</span> <span style="color: #d0d0d0">(i</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span> <span style="color: #d0d0d0">i</span> <span style="color: #d0d0d0">&lt;</span> <span style="color: #d0d0d0">logSize;</span> <span style="color: #d0d0d0">i++)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">fout</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">infoLog[i];</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">fout.close();</span>
+
+	<span style="color: #d0d0d0">error</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">mbstowcs_s(&amp;convertedChars,</span> <span style="color: #d0d0d0">newString,</span> <span style="color: #3677a9">128</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">fileName,</span> <span style="color: #3677a9">128</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(error</span> <span style="color: #d0d0d0">!=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">MessageBox(hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;Error compiling shader. Check shader-error.txt.&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">fileName,</span> <span style="color: #d0d0d0">MB_OK);</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">TextureShader::OutputLinkerErrorMessage(OGL*</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #d0d0d0">HWND</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #6ab825; font-weight: bold">unsigned</span> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">programId)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">logSize,</span> <span style="color: #d0d0d0">i;</span>
+	<span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">infoLog;</span>
+	<span style="color: #d0d0d0">std::ofstream</span> <span style="color: #d0d0d0">fout;</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetProgramIV(programId,</span> <span style="color: #d0d0d0">GL_INFO_LOG_LENGTH,</span> <span style="color: #d0d0d0">&amp;logSize);</span>
+
+	<span style="color: #d0d0d0">logSize++;</span>
+
+	<span style="color: #d0d0d0">infoLog</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #6ab825; font-weight: bold">char</span><span style="color: #d0d0d0">[logSize];</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!infoLog)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glGetProgramInfoLog(programId,</span> <span style="color: #d0d0d0">logSize,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">infoLog);</span>
+
+	<span style="color: #d0d0d0">fout.open(</span><span style="color: #ed9d13">&quot;linker-error.txt&quot;</span><span style="color: #d0d0d0">);</span>
+
+	<span style="color: #6ab825; font-weight: bold">for</span> <span style="color: #d0d0d0">(i</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span> <span style="color: #d0d0d0">i</span> <span style="color: #d0d0d0">&lt;</span> <span style="color: #d0d0d0">logSize;</span> <span style="color: #d0d0d0">i++)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">fout</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">infoLog[i];</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">fout.close();</span>
+
+	<span style="color: #d0d0d0">MessageBox(hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;Error compiling linker. Check linker-error.txt for message.&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;Linker Error&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">MB_OK);</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">TextureShader::ShutdownShader(OGL*</span> <span style="color: #d0d0d0">openGL)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">openGL-&gt;glDetachShader(m_shaderProgram,</span> <span style="color: #d0d0d0">m_vertexShader);</span>
+	<span style="color: #d0d0d0">openGL-&gt;glDetachShader(m_shaderProgram,</span> <span style="color: #d0d0d0">m_pixelShader);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glDeleteShader(m_vertexShader);</span>
+	<span style="color: #d0d0d0">openGL-&gt;glDeleteShader(m_pixelShader);</span>
+
+	<span style="color: #d0d0d0">openGL-&gt;glDeleteProgram(m_shaderProgram);</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">TextureShader::SetShaderParameters(OGL*</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #6ab825; font-weight: bold">float</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">worldMatrix,</span> <span style="color: #6ab825; font-weight: bold">float</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">viewMatrix,</span> <span style="color: #6ab825; font-weight: bold">float</span><span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">projectionMatrix,</span> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">texUnit)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">unsigned</span> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">location;</span>
+
+	<span style="color: #d0d0d0">location</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glGetUniformLocation(m_shaderProgram,</span> <span style="color: #ed9d13">&quot;worldMatrix&quot;</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(location</span> <span style="color: #d0d0d0">==</span> <span style="color: #d0d0d0">-</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+	<span style="color: #d0d0d0">openGL-&gt;glUniformMatrix4fv(location,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">worldMatrix);</span>
+
+	<span style="color: #d0d0d0">location</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glGetUniformLocation(m_shaderProgram,</span> <span style="color: #ed9d13">&quot;viewMatrix&quot;</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(location</span> <span style="color: #d0d0d0">==</span> <span style="color: #d0d0d0">-</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+	<span style="color: #d0d0d0">openGL-&gt;glUniformMatrix4fv(location,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">viewMatrix);</span>
+
+	<span style="color: #d0d0d0">location</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glGetUniformLocation(m_shaderProgram,</span> <span style="color: #ed9d13">&quot;projectionMatrix&quot;</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(location</span> <span style="color: #d0d0d0">==</span> <span style="color: #d0d0d0">-</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+	<span style="color: #d0d0d0">openGL-&gt;glUniformMatrix4fv(location,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">projectionMatrix);</span>
+
+	<span style="color: #d0d0d0">location</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">openGL-&gt;glGetUniformLocation(m_shaderProgram,</span> <span style="color: #ed9d13">&quot;shaderTexture&quot;</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(location</span> <span style="color: #d0d0d0">==</span> <span style="color: #d0d0d0">-</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+	<span style="color: #d0d0d0">openGL-&gt;glUniform1i(location,</span> <span style="color: #d0d0d0">texUnit);</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+</pre></td></tr></table></div>
+
 	</body>
 </html>

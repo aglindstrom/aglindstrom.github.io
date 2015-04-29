@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+		<title> Framework.h </title>
 		<link rel = "stylesheet" href = "../subdirstyles.css"/>
 	</head>
 	<body>
@@ -16,5 +17,102 @@
 				</ul>
 			</div>
 		</div>
+				<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; padding-top: 1em; padding-bottom: 40%;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #cd2828; font-weight: bold">#ifndef _FRAMEWORK_H_</span>
+<span style="color: #cd2828; font-weight: bold">#define _FRAMEWORK_H_</span>
+
+<span style="color: #cd2828; font-weight: bold">#define WIN32_LEAN_AND_MEAN</span>
+
+<span style="color: #cd2828; font-weight: bold">#pragma comment(lib, &quot;user32.lib&quot;)</span>
+<span style="color: #cd2828; font-weight: bold">#pragma comment(lib, &quot;gdi32.lib&quot;)</span>
+
+<span style="color: #cd2828; font-weight: bold">#include &quot;inputDevice.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &quot;output.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &quot;ogl.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &lt;string.h&gt;</span>
+<span style="color: #cd2828; font-weight: bold">#include &lt;tchar.h&gt;</span>
+<span style="color: #cd2828; font-weight: bold">#include &lt;windows.h&gt;</span>
+<span style="color: #cd2828; font-weight: bold">#include &lt;fstream&gt;</span>
+
+<span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #447fcf; text-decoration: underline">Framework</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">public:</span>
+		<span style="color: #d0d0d0">Framework();</span>
+		<span style="color: #d0d0d0">Framework(</span><span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">Framework&amp;);</span>
+		<span style="color: #d0d0d0">~Framework();</span>
+		
+		<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #447fcf">Initialize</span><span style="color: #d0d0d0">(std::ofstream*);</span>
+		<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">Shutdown</span><span style="color: #d0d0d0">();</span>
+		<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">Run</span><span style="color: #d0d0d0">();</span>
+		
+		<span style="color: #d0d0d0">LRESULT</span> <span style="color: #d0d0d0">CALLBACK</span> <span style="color: #447fcf">MessageHandler</span><span style="color: #d0d0d0">(HWND,</span> <span style="color: #d0d0d0">UINT,</span> <span style="color: #d0d0d0">WPARAM,</span> <span style="color: #d0d0d0">LPARAM);</span>
+		
+	<span style="color: #d0d0d0">private:</span>
+		<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #447fcf">Frame</span><span style="color: #d0d0d0">();</span>
+		<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #447fcf">InitializeWindows</span><span style="color: #d0d0d0">(OGL*,</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">&amp;,</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">&amp;,</span> <span style="color: #d0d0d0">std::ofstream*);</span>
+		<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">ShutdownWindows</span><span style="color: #d0d0d0">();</span>
+		
+		<span style="color: #d0d0d0">inputDevice*</span> <span style="color: #d0d0d0">keyboard_mouse;</span>
+		<span style="color: #d0d0d0">output*</span> <span style="color: #d0d0d0">m_output;</span>
+		<span style="color: #d0d0d0">OGL*</span> <span style="color: #d0d0d0">m_openGL;</span>
+
+		<span style="color: #d0d0d0">LPCSTR</span> <span style="color: #d0d0d0">m_appName;</span>
+		<span style="color: #d0d0d0">HINSTANCE</span> <span style="color: #d0d0d0">m_hinstance;</span>
+		<span style="color: #d0d0d0">HWND</span> <span style="color: #d0d0d0">m_hwnd;</span>
+<span style="color: #d0d0d0">};</span>
+
+<span style="color: #6ab825; font-weight: bold">static</span> <span style="color: #d0d0d0">LRESULT</span> <span style="color: #d0d0d0">CALLBACK</span> <span style="color: #447fcf">WndProc</span><span style="color: #d0d0d0">(HWND,</span> <span style="color: #d0d0d0">UINT,</span> <span style="color: #d0d0d0">WPARAM,</span> <span style="color: #d0d0d0">LPARAM);</span>
+
+<span style="color: #6ab825; font-weight: bold">static</span> <span style="color: #d0d0d0">Framework*</span> <span style="color: #d0d0d0">ApplicationHandle</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+<span style="color: #cd2828; font-weight: bold">#endif</span>
+</pre></td></tr></table></div>
+
 	</body>
 </html>

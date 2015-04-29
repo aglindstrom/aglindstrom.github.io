@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+		<title> Framework.cpp </title>
 		<link rel = "stylesheet" href = "../subdirstyles.css"/>
 	</head>
 	<body>
@@ -21,5 +22,576 @@
 				</ul>
 			</div>
 		</div>
+		<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; padding-top: 1em; padding-bottom: 40%;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #cd2828; font-weight: bold">#include &quot;framework.h&quot;</span>
+
+<span style="color: #d0d0d0">Framework::Framework()</span>
+<span style="color: #d0d0d0">{</span>
+	
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #d0d0d0">Framework::Framework(</span><span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">Framework&amp;</span> <span style="color: #d0d0d0">other)</span>
+<span style="color: #d0d0d0">{</span>
+
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #d0d0d0">Framework::~Framework()</span>
+<span style="color: #d0d0d0">{</span>
+
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">Framework::Initialize(std::ofstream*</span> <span style="color: #d0d0d0">errorOut)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">width,</span> <span style="color: #d0d0d0">height;</span>
+	<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">width</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">height</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #d0d0d0">keyboard_mouse</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">inputDevice;</span>
+	<span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">keyboard_mouse-&gt;Initialize();</span>
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(!result)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">MessageBox(m_hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;input failed&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;it didn&#39;t work&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">MB_OK);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">m_openGL</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">OGL;</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!m_openGL)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">InitializeWindows(m_openGL,</span> <span style="color: #d0d0d0">width,</span> <span style="color: #d0d0d0">height,</span> <span style="color: #d0d0d0">errorOut);</span>
+
+	<span style="color: #d0d0d0">m_output</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">output;</span>
+	<span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">m_output-&gt;Initialize(m_openGL,</span> <span style="color: #d0d0d0">m_hwnd);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!result)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">MessageBox(m_hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;output failed&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;it didn&#39;t work&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">MB_OK);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">Framework::Shutdown()</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(keyboard_mouse)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">delete</span> <span style="color: #d0d0d0">keyboard_mouse;</span>
+		<span style="color: #d0d0d0">keyboard_mouse</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(m_openGL)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">m_openGL-&gt;Shutdown(m_hwnd);</span>
+		<span style="color: #6ab825; font-weight: bold">delete</span> <span style="color: #d0d0d0">m_openGL;</span>
+		<span style="color: #d0d0d0">m_openGL</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>	
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(m_output)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">m_output-&gt;Shutdown();</span>
+		<span style="color: #6ab825; font-weight: bold">delete</span> <span style="color: #d0d0d0">m_output;</span>
+		<span style="color: #d0d0d0">m_output</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">ShutdownWindows();</span>
+	
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">Framework::Run()</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">MSG</span> <span style="color: #d0d0d0">msg;</span>
+	<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">done</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">MessageBox(m_hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;RUNNING&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;RUNNING&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">MB_OK);</span>
+
+	<span style="color: #d0d0d0">ZeroMemory(&amp;msg,</span> <span style="color: #6ab825; font-weight: bold">sizeof</span><span style="color: #d0d0d0">(MSG));</span>
+
+	<span style="color: #6ab825; font-weight: bold">while</span><span style="color: #d0d0d0">(!done)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(PeekMessage(&amp;msg,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">PM_REMOVE))</span>
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #d0d0d0">TranslateMessage(&amp;msg);</span>
+			<span style="color: #d0d0d0">DispatchMessage(&amp;msg);</span>
+		<span style="color: #d0d0d0">}</span>
+
+		<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(msg.message</span> <span style="color: #d0d0d0">==</span> <span style="color: #d0d0d0">WM_QUIT)</span>
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #d0d0d0">done</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+		<span style="color: #d0d0d0">}</span>
+		<span style="color: #6ab825; font-weight: bold">else</span>
+		<span style="color: #d0d0d0">{</span>
+			
+			<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(!Frame())</span>
+			<span style="color: #d0d0d0">{</span>
+				<span style="color: #d0d0d0">done</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+			<span style="color: #d0d0d0">}</span>
+		<span style="color: #d0d0d0">}</span>
+	<span style="color: #d0d0d0">}</span>
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">Framework::Frame()</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">x</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">y</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(keyboard_mouse-&gt;IsKeyDown(VK_ESCAPE))</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">keyboard_mouse-&gt;GetMouseLoc(x,</span> <span style="color: #d0d0d0">y);</span>
+	
+	<span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(!m_output-&gt;Frame(x,</span> <span style="color: #d0d0d0">y,</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">))</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">Framework::InitializeWindows(OGL*</span> <span style="color: #d0d0d0">openGL,</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">&amp;</span> <span style="color: #d0d0d0">width,</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">&amp;</span> <span style="color: #d0d0d0">height,</span> <span style="color: #d0d0d0">std::ofstream*</span> <span style="color: #d0d0d0">errorOut)</span> 
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">WNDCLASSEX</span> <span style="color: #d0d0d0">wcex;</span>
+	<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">posX,</span> <span style="color: #d0d0d0">posY;</span>
+	<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">ApplicationHandle</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">m_hinstance</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">GetModuleHandle(</span><span style="color: #24909d">NULL</span><span style="color: #d0d0d0">);</span>
+	
+	<span style="color: #d0d0d0">m_appName</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;Paint+&quot;</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">wcex.cbSize</span> 			<span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">sizeof</span><span style="color: #d0d0d0">(WNDCLASSEX);</span>
+	<span style="color: #d0d0d0">wcex.style</span> 				<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">CS_HREDRAW|CS_VREDRAW|CS_OWNDC;</span>
+	<span style="color: #d0d0d0">wcex.lpfnWndProc</span> 		<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">WndProc;</span>
+	<span style="color: #d0d0d0">wcex.cbClsExtra</span>			<span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">wcex.cbWndExtra</span>			<span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">wcex.hInstance</span> 			<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">m_hinstance;</span>
+	<span style="color: #d0d0d0">wcex.hIcon</span>				<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">LoadIcon(</span><span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">IDI_WINLOGO);</span>
+	<span style="color: #d0d0d0">wcex.hCursor</span>			<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">LoadCursor(</span><span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">IDC_ARROW);</span>
+	<span style="color: #d0d0d0">wcex.hbrBackground</span>		<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">(HBRUSH)GetStockObject(BLACK_BRUSH);</span>
+	<span style="color: #d0d0d0">wcex.lpszMenuName</span>		<span style="color: #d0d0d0">=</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">wcex.lpszClassName</span>		<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">m_appName;</span>
+	<span style="color: #d0d0d0">wcex.hIconSm</span>			<span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">wcex.hIcon;</span>
+	
+	<span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">RegisterClassEx(&amp;wcex);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(!result)</span>
+	<span style="color: #d0d0d0">{</span>
+   		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">m_hwnd</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">CreateWindowEx(WS_EX_APPWINDOW,</span> 
+									<span style="color: #d0d0d0">m_appName,</span> 
+									<span style="color: #d0d0d0">m_appName,</span> 
+									<span style="color: #d0d0d0">WS_OVERLAPPEDWINDOW,</span>
+									<span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span>
+									<span style="color: #3677a9">640</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">480</span><span style="color: #d0d0d0">,</span>
+									<span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> 
+									<span style="color: #d0d0d0">m_hinstance,</span>
+									<span style="color: #24909d">NULL</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #d0d0d0">*errorOut</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #ed9d13">&quot;first&quot;</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">GetLastError()</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">std::endl;</span>
+	<span style="color: #d0d0d0">ShowWindow(m_hwnd,</span> <span style="color: #d0d0d0">SW_HIDE);</span>
+
+	<span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">m_openGL-&gt;InitializeExtensions(m_hwnd);</span>
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(!result)</span> 
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">MessageBox(m_hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;Could not Initialize OpenGL extensions&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;It didn&#39;t work&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">MB_OK);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+	<span style="color: #d0d0d0">width</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">GetSystemMetrics(SM_CXSCREEN);</span>
+	<span style="color: #d0d0d0">height</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">GetSystemMetrics(SM_CYSCREEN);</span>
+
+	<span style="color: #d0d0d0">DestroyWindow(m_hwnd);</span>
+	<span style="color: #d0d0d0">m_hwnd</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #d0d0d0">PeekMessage(</span><span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">m_hwnd,</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">PM_REMOVE);</span>
+
+	<span style="color: #d0d0d0">posX</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">posY</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+
+	<span style="color: #d0d0d0">m_hwnd</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">CreateWindowEx(WS_EX_APPWINDOW,</span> 
+									<span style="color: #d0d0d0">m_appName,</span> 
+									<span style="color: #d0d0d0">m_appName,</span> 
+									<span style="color: #d0d0d0">WS_POPUP,</span>
+									<span style="color: #d0d0d0">posX,posY,</span>
+									<span style="color: #d0d0d0">width,</span> <span style="color: #d0d0d0">height,</span>
+									<span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">,</span> 
+									<span style="color: #d0d0d0">m_hinstance,</span>
+									<span style="color: #24909d">NULL</span><span style="color: #d0d0d0">);</span>
+	<span style="color: #d0d0d0">*errorOut</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #ed9d13">&quot;second&quot;</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">GetLastError()</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">std::endl;</span>
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(!m_hwnd)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span> 
+
+	<span style="color: #d0d0d0">result</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">m_openGL-&gt;InitializeOGL(m_hwnd,</span> <span style="color: #d0d0d0">width,</span> <span style="color: #d0d0d0">height,</span> <span style="color: #d0d0d0">SCREEN_DEPTH,</span> <span style="color: #d0d0d0">SCREEN_NEAR,</span> <span style="color: #d0d0d0">VSYNC_ENABLED);</span> 
+	<span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(!result)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #d0d0d0">MessageBox(m_hwnd,</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;Could Not Initialize OpenGL, check OpenGL 4.0 support&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">_T(</span><span style="color: #ed9d13">&quot;It didn&#39;t work&quot;</span><span style="color: #d0d0d0">),</span> <span style="color: #d0d0d0">MB_OK);</span>
+		<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+	<span style="color: #d0d0d0">}</span>
+
+
+
+	<span style="color: #d0d0d0">ShowWindow(m_hwnd,</span> <span style="color: #d0d0d0">SW_SHOW);</span>
+	<span style="color: #d0d0d0">*errorOut</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #ed9d13">&quot;third&quot;</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">GetLastError()</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">std::endl;</span>
+	<span style="color: #d0d0d0">SetForegroundWindow(m_hwnd);</span>
+	<span style="color: #d0d0d0">*errorOut</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #ed9d13">&quot;fourth&quot;</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">GetLastError()</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">std::endl;</span>
+	<span style="color: #d0d0d0">SetFocus(m_hwnd);</span>
+	<span style="color: #d0d0d0">*errorOut</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #ed9d13">&quot;fifth&quot;</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">GetLastError()</span> <span style="color: #d0d0d0">&lt;&lt;</span> <span style="color: #d0d0d0">std::endl;</span>
+	
+	<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #24909d">true</span><span style="color: #d0d0d0">;</span>	
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">Framework::ShutdownWindows()</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">ShowCursor(</span><span style="color: #24909d">true</span><span style="color: #d0d0d0">);</span>
+	
+	<span style="color: #d0d0d0">DestroyWindow(m_hwnd);</span>
+	<span style="color: #d0d0d0">m_hwnd</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">UnregisterClass(m_appName,</span> <span style="color: #d0d0d0">m_hinstance);</span>
+	<span style="color: #d0d0d0">m_hinstance</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #d0d0d0">ApplicationHandle</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">NULL</span><span style="color: #d0d0d0">;</span>
+	
+	<span style="color: #6ab825; font-weight: bold">return</span><span style="color: #d0d0d0">;</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #d0d0d0">LRESULT</span> <span style="color: #d0d0d0">CALLBACK</span> <span style="color: #d0d0d0">WndProc(HWND</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #d0d0d0">UINT</span> <span style="color: #d0d0d0">message,</span> <span style="color: #d0d0d0">WPARAM</span> <span style="color: #d0d0d0">wparam,</span> <span style="color: #d0d0d0">LPARAM</span> <span style="color: #d0d0d0">lparam)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">switch</span><span style="color: #d0d0d0">(message)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">WM_DESTROY</span>:
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #d0d0d0">PostQuitMessage(</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">);</span>
+			<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+		<span style="color: #d0d0d0">}</span>
+		<span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">WM_CLOSE</span>:
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #d0d0d0">PostQuitMessage(</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">);</span>
+			<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+		<span style="color: #d0d0d0">}</span>
+		<span style="color: #d0d0d0">default:</span>
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">ApplicationHandle-&gt;MessageHandler(hwnd,</span> <span style="color: #d0d0d0">message,</span> <span style="color: #d0d0d0">wparam,</span> <span style="color: #d0d0d0">lparam);</span>
+		<span style="color: #d0d0d0">}</span>
+	
+	<span style="color: #d0d0d0">}</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #d0d0d0">LRESULT</span> <span style="color: #d0d0d0">CALLBACK</span> <span style="color: #d0d0d0">Framework::MessageHandler(HWND</span> <span style="color: #d0d0d0">hwnd,</span> <span style="color: #d0d0d0">UINT</span> <span style="color: #d0d0d0">message,</span> <span style="color: #d0d0d0">WPARAM</span> <span style="color: #d0d0d0">wparam,</span> <span style="color: #d0d0d0">LPARAM</span> <span style="color: #d0d0d0">lparam)</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #6ab825; font-weight: bold">switch</span> <span style="color: #d0d0d0">(message)</span>
+	<span style="color: #d0d0d0">{</span>
+		<span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">WM_KEYDOWN</span>:
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #d0d0d0">keyboard_mouse-&gt;KeyDown((</span><span style="color: #6ab825; font-weight: bold">unsigned</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">)wparam);</span>
+			<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+		<span style="color: #d0d0d0">}</span>
+		<span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">WM_KEYUP</span>:
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #d0d0d0">keyboard_mouse-&gt;KeyUp((</span><span style="color: #6ab825; font-weight: bold">unsigned</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">)wparam);</span>
+			<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+		<span style="color: #d0d0d0">}</span>
+		
+		<span style="color: #d0d0d0">default:</span>
+		<span style="color: #d0d0d0">{</span>
+			<span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">DefWindowProc(hwnd,</span> <span style="color: #d0d0d0">message,</span> <span style="color: #d0d0d0">wparam,</span> <span style="color: #d0d0d0">lparam);</span>
+		<span style="color: #d0d0d0">}</span>
+	<span style="color: #d0d0d0">}</span>
+<span style="color: #d0d0d0">}</span>
+</pre></td></tr></table></div>
+
 	</body>
 </html>
