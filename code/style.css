@@ -1,0 +1,108 @@
+@import url(http://fonts.googleapis.com/css?family=Fira+Mono);
+
+*{
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #DDC;
+}
+
+#header{
+	width: 100%;
+	background-color: #444;
+	box-shadow: 0em 0em 1em 0em black;
+}
+
+#nav > ul{
+	text-decoration: none;
+	text-align: center;
+}
+
+#nav > ul > li, #nav > ul > a >li{
+	/* POSITION */
+	display: inline-block;
+	text-align: center;
+	
+	/* DIMENSIONS */
+	height: 100%;
+	padding: 0% 2.5%;
+
+
+	/* FONT */
+	color: #EEE;
+	font-family: 'Fira Mono', sans-serif;
+	font-size: 30pt;
+
+	cursor: pointer;
+
+	/* FX ***SOME MAY NOT WORK WITH OLDER BROWSERS*** */
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+#nav > ul > li:hover, #nav > ul > a > li:hover{
+	background-color: rgba(255,255,255,0.25);
+}
+
+div.imgwrap{
+	display: inline;
+	background-image: url('test.png');
+	background-size: 15em 15em;
+	width: 15em; 
+	height: 15em;
+	float: left;
+	margin: 1em;
+
+	box-shadow: 0em 0em .8em 0em black;
+}
+
+div.imgcover{
+	width: 100%; 
+	height: 30%; 
+	position: relative; 
+	top: 70%; 
+	background-color: rgba(0,0,0,.75);
+
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+div.imgwrap:hover > div.imgcover{
+	height: 70%;
+	top: 30%;
+}
+
+div.imgcover > h1{
+	margin: .1em;
+	color: #EEE;
+	font-family: 'Fira Mono', sans-serif;
+	font-size: 15pt;
+	margin-top: .2em;
+}
+
+div.imgcover > p{
+	margin: .1em;
+	color: #EEE;
+	font-family: 'Fira Mono', sans-serif;
+	font-size: 10pt;
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: opacity .2s;
+	-moz-transition: opacity .2s;
+	-o-transition: opacity .2s;
+	transition: opacity .2s;
+}
+
+div.imgwrap:hover > div.imgcover > p{
+	opacity: 1;
+	visibility: visible;
+}
+

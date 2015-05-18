@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> Output.h </title>
+		<link href = "../icon.png" type = "image/png" rel = "icon">
+		<link rel = "stylesheet" href = "../subdirstyles.css"/>
+	</head>
+	<body>
+		<div id = "header">
+			<div>
+				<ul>
+					<a href = "./index.html">
+						<li>
+							SOURCE
+						</li>
+					</a>
+				</ul>
+			</div>
+		</div>
+		<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; padding-top: 1em; padding-bottom: 40%;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #cd2828; font-weight: bold">#ifndef _OUTPUT_H_</span>
+<span style="color: #cd2828; font-weight: bold">#define _OUTPUT_H_</span>
+
+<span style="color: #cd2828; font-weight: bold">#include &quot;ogl.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &quot;camera.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &quot;model.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &quot;colorShader.h&quot;</span>
+<span style="color: #cd2828; font-weight: bold">#include &quot;textureshader.h&quot;</span>
+
+<span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">SCREEN_DEPTH</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">1000.0f</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">SCREEN_NEAR</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0.0f</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #d0d0d0">VSYNC_ENABLED</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">false</span><span style="color: #d0d0d0">;</span>
+
+<span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #447fcf; text-decoration: underline">output</span>
+<span style="color: #d0d0d0">{</span>
+	<span style="color: #d0d0d0">public:</span>
+		<span style="color: #d0d0d0">output();</span>
+		<span style="color: #d0d0d0">output(</span><span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">output&amp;);</span>
+		<span style="color: #d0d0d0">~output();</span>
+
+		<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #447fcf">Initialize</span><span style="color: #d0d0d0">(OGL*</span> <span style="color: #d0d0d0">ogl,</span> <span style="color: #d0d0d0">HWND</span> <span style="color: #d0d0d0">hwnd);</span>
+		<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #447fcf">Frame</span><span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">,</span> <span style="color: #6ab825; font-weight: bold">int</span><span style="color: #d0d0d0">,</span> <span style="color: #6ab825; font-weight: bold">bool</span><span style="color: #d0d0d0">);</span>
+		<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">Shutdown</span><span style="color: #d0d0d0">();</span>
+
+	<span style="color: #d0d0d0">private:</span>
+		<span style="color: #6ab825; font-weight: bold">bool</span> <span style="color: #447fcf">Render</span><span style="color: #d0d0d0">();</span>
+
+		<span style="color: #d0d0d0">OGL*</span> <span style="color: #d0d0d0">m_openGL;</span>
+		<span style="color: #d0d0d0">Camera*</span> <span style="color: #d0d0d0">m_camera;</span>
+		<span style="color: #d0d0d0">Model*</span> <span style="color: #d0d0d0">m_model;</span>
+		<span style="color: #d0d0d0">TextureShader*</span> <span style="color: #d0d0d0">m_TextureShader;</span>
+<span style="color: #d0d0d0">};</span>
+
+<span style="color: #cd2828; font-weight: bold">#endif</span>
+</pre></td></tr></table></div>
+
+	</body>
+</html>

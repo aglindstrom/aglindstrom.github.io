@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=Fira+Mono);
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+
+*{
+	padding: 0;
+	border: 0;
+	margin: 0;
+
+	font-size: 50pt;
+}
+
+body{
+	background-color: #555;
+}
+
+a{
+	text-decoration: none;
+}
+
+div.top{
+	width: 100%;
+	padding: 1.5em 0em;
+	text-align: center;
+	background-color: #EEE; 
+	color: #111;
+
+	font-family: 'Fredericka the Great', sans-serif;
+
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+
+}
+
+div.bot{
+	width: 100%;
+	padding: 1.5em 0em;
+	text-align: center;
+	background-color: #111; 
+	color: #EEE;
+
+	font-family: 'Fira Mono', sans-serif;
+
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+
+}
+
+div.top:hover{
+	background-color: #222; 
+	color: #CCC;
+}
+
+div.bot:hover{
+	background-color: #CCC; 
+	color: #222;
+}
+
