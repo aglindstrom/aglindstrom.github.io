@@ -49,6 +49,23 @@ div.bot{
 
 }
 
+div.about{
+	width: 100%;
+	padding: 1.5em 0em;
+	text-align: center;
+	background-color: #777; 
+	color: #EEE;
+
+	font-family: 'Fira Mono', sans-serif;
+
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+
+}
+
+
 div.top:hover{
 	background-color: #222; 
 	color: #CCC;
@@ -59,3 +76,7 @@ div.bot:hover{
 	color: #222;
 }
 
+div.about:hover{
+	background-color: #222; 
+	color: #CCC;
+}
