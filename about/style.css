@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+
+*{
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #DDC;
+}
+
+
+#body{
+	width: 75%;
+	margin-left: 12.5%;
+}
+
+#header{
+	width: 100%;
+	background-color: #444;
+	box-shadow: 0em 0em 1em 0em black;
+}
+
+#nav > ul{
+	text-decoration: none;
+	text-align: center;
+}
+
+#nav > ul > li, #nav > ul > a >li{
+	/* POSITION */
+	display: inline-block;
+	text-align: center;
+	
+	/* DIMENSIONS */
+	height: 100%;
+	padding: 0% 2.5%;
+
+
+	/* FONT */
+	color: #EEE;
+	font-family: 'Fredericka the Great', sans-serif;
+	font-size: 30pt;
+
+	cursor: pointer;
+
+	/* FX ***SOME MAY NOT WORK WITH OLDER BROWSERS*** */
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+#nav > ul > li:hover, #nav > ul > a > li:hover{
+	background-color: rgba(255,255,255,0.25);
+}
