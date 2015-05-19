@@ -27,13 +27,14 @@ body{
 	text-align: center;
 }
 
-#nav > ul > li{
+#nav > ul > li, #nav > ul > a >li{
 	/* POSITION */
 	display: inline-block;
 	text-align: center;
 	
 	/* DIMENSIONS */
 	height: 100%;
+	padding: 0% 2.5%;
 
 
 	/* FONT */
@@ -50,16 +51,7 @@ body{
 	transition: all .2s;
 }
 
-#nav > ul > li div{
-	width: 100%;
-	height: 100%;
-
-	color: #EEE;
-	font-family: 'Fira Mono', sans-serif;
-	font-size: 30pt;
-}
-
-#nav > ul > li:hover div{
+#nav > ul > li:hover, #nav > ul > a > li:hover{
 	background-color: rgba(255,255,255,0.25);
 }
 
