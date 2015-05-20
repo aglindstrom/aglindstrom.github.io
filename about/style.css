@@ -63,6 +63,15 @@ body{
 
 #body > p {
 	font-family: 'Fredericka the Great', sans-serif;
+	font-size: 15pt;
+	color: #000;
+}
+
+#contactinfo{
+	width: 55%;
+	margin-left: 22.5%;
+	margin-top: 2em;
+	font-family: 'Fredericka the Great', sans-serif;
 	font-size: 12pt;
-	color: #111;
+	color: #000;
 }
