@@ -16,10 +16,10 @@ function player(location, x, y, width, height){
 	this.jump = 0;
 	this.jumpSpeed = .25;
 	this.grav = .05;
-	this.accel = .15;
-	this.deccel = .07;
+	this.accel = .04;
+	this.deccel = .02;
 	this.jumpTick = 1;
-	this.maxspeed = 5;
+	this.maxspeed = 3;
 	this.collides = true;
 
 	//methods//
