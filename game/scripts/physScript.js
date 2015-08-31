@@ -84,8 +84,10 @@ function stageEdge(player)
 	internal(player, 300, 476, 233, 238);
 	internal(player, 1200, 1376, 233, 238);
 	internal(player, 0, 88, 100, 105);
-	internal(player, 712, 888, 100, 105);
+	internal(player, 712, 888, 101, 106);
 	internal(player, 712, 888, 365, 370);
+	internal(player, 1624, 1800, 101, 106);
+	internal(player, 1624, 1800, 365, 370);
 }
 /*
 function checkCollision(sprite1, sprite2)
