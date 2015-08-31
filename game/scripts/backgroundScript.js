@@ -1,20 +1,22 @@
+//BACKGROUND SCRIPT//
 
 
-function background(location){
+function background(location, width, height){
 
-	this.sprite = new sprite(location, 0, 0, 800, 600);
+	this.sprite = new sprite(location, 0, 0, width, height);
 	this.collides = false;
 	
-	this.update = function (){ backgroundUpdate();}
-	this.render = function (){ backgroundRender(ctx, this.sprite.image, this.sprite.x, this.sprite.y);};
+	this.update = function (){};
+	this.render = function (){ backgroundRender(ctx, this.sprite);};
 }
 
-function backgroundUpdate()
+function backgroundRender(ctx, sprite)
 {
-
-}
-
-function backgroundRender(ctx, image, x, y)
-{
-	ctx.drawImage(image, x, y);
+	for(var j = 0; canvas.height > (j*sprite.height + sprite.y); j++)
+	{
+	for(var i = 0; canvas.width > (i*sprite.width + sprite.x); i++)
+		{
+			ctx.drawImage(sprite.image, ((i*sprite.width)+sprite.x), ((j*sprite.height) + sprite.y), sprite.width, sprite.height);
+		}
+	}
 }
