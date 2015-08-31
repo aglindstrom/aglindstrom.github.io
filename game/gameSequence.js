@@ -16,7 +16,7 @@ function loadassets(assets){
 	assets.push(new rigid("./images/riser_big.png", 712, 132, 22, 36, 8, true));
 	assets.push(new rigid("./images/riser_big.png", 712, 396, 22, 36, 8, true));
 	assets.push(new rigid("./images/Bridge_1.png", 0, 500, 83, 36, true, false));
-	assets.push(new player("./images/char_block.png", 268, 268, 32, 32));
+	assets.push(new player("./images/char_block.png", 760, 268, 32, 32));
 }
 
 function update(assets){
