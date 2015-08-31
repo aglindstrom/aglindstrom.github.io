@@ -16,8 +16,6 @@ function initialize(){
 
 	//initialize canvas//
 	canvas.id = "frame";
-	canvas.width = screen.width;
-	canvas.height = 700;
 	document.body.appendChild(canvas);
 
 	//initialize lists//
