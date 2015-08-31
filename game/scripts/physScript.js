@@ -51,6 +51,7 @@ function verticle(player)
 	else if (player.sprite.y < 0)
 	{
 		player.sprite.y = 0;
+		player.jump = 0;
 	}
 }
 
