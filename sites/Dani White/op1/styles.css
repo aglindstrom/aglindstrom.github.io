@@ -1,0 +1,93 @@
+/*
+http://paletton.com/#uid=b092E3q1knhs+dOGHj3wlrYpyujkckpjudf-GqkJxDtJq8vHkDktxRIhPUxnOT1IQPAMnus
+*/
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url("Background_1.jpg");
+	background-size: 19.2em 10.8em;
+}
+
+#wrapper{
+	width: 100%;
+}
+
+#nameTag{
+	z-index: 5;
+	position: relative;
+	background-color: rgba(255,255,255,.75);
+	color: #76C043;
+	font-size: 4em;
+	padding: .25em .1em;
+	padding-right: 2em;
+	box-shadow: 0em 0em 0em .05em rgba(0,0,0,.5);
+	border-bottom-right-radius: 5px; 
+	-webkit-transition: color .2s;
+}
+
+#nav {
+	font-family: Comfortaa;
+	vertical-align: middle;
+	width: 100%;
+	padding-top: .1em;
+}
+
+#nav > ul{
+	padding-left: 3em;
+	display: flex;
+	text-align: center;
+}
+
+#nav > ul > li{
+	margin-top: 1em;
+	display: block;
+	border-bottom-width: 0em;
+	border-bottom-style: dashed;
+	border-bottom-color: rgba(103,204,235,0);
+	padding: .5em 1em;
+	padding: .8em;
+	background-color: rgba(255,255,255,.5);
+	-webkit-transition: background-color .2s, border-bottom-color .2s;
+	transition: background-color .2s, border-bottom-color .2s;
+}
+
+#nav > ul > li:first-child{
+	border-left-width: .15em;
+}
+
+#nav > ul > li:last-child{
+	border-right-width: .15em;
+}
+
+#nav > ul > li > a{
+	text-decoration: none;
+	text-align: center;
+	color: #67CCEB;
+	font-size: 2em;
+	-webkit-transition: color .2s;
+}
+
+#nav > ul > li:hover{
+	border-bottom-color: rgba(103,204,235,1);
+	border-bottom-width: .3em;
+	padding-bottom: .5em;
+	background-color: rgba(255,255,255,.75);
+}
+
+#nav > ul > li:hover > a{
+	color: #E75F3F;
+}
+
+a{
+	text-decoration: none;
+}
+
+#nameTag:hover{
+	color: #67CCEB;
+}
