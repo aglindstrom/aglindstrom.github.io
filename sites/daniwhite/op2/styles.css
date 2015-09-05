@@ -1,0 +1,88 @@
+/*
+http://paletton.com/#uid=23X0o1k004D0jiA01c25102d60pktxRIhPUxnOT1IQPAMnus
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Mate+SC);
+*{
+	border: 0; 
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-image: url("background.png");
+}
+
+a{
+	text-decoration: none;
+}
+
+#header{
+	z-index: 10;
+	position: fixed;
+	width: 100%;
+}
+
+#nav{
+	position: fixed;
+	top: 5.5em;
+	left: 15em;
+	height: 3em;
+	vertical-align: middle;
+}
+
+#nav > ul{
+	display: flex;
+	height: 100%;
+}
+#nameTag{
+	position: absolute;
+	top: 0em;
+	left: .5em;
+	font-family: Mate SC;
+	font-size: 4em;
+	color: #555;
+	cursor: pointer;
+	-webkit-transition: color .5s;
+}
+#nameTag:hover{
+	color: #777;
+}
+#nav > ul > li{
+	text-align: center;
+	display: block;
+	font-family: Mate SC;
+	font-size: 1em;
+	width: 7em;
+	height: 2.33em;
+	border-bottom: 0;
+	border-bottom-color: #bbb;
+	background-color: rgba(127,127,127,0);
+	-webkit-transition: background-color .5s, border-bottom .5s, color .5s;
+}
+
+#nav > ul > li > a{
+	color: #999;
+	-webkit-transition: background-color .5s, border-bottom .5s, color .5s;
+}
+#nav > ul > li > a > div{
+	width: 100%;
+	height: 100%;
+}
+#nav > ul > li:hover{
+	background-color: rgba(127,127,127,1);
+	border-bottom: .25em;
+	border-bottom-style: solid;
+	border-bottom-color: #bbb;
+}
+
+#nav > ul > li:hover > a{
+		color: #DDD;
+}
+
+#body{
+
+}
+
+#footer{
+
+}
