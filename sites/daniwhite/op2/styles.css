@@ -1,7 +1,7 @@
 /*
 http://paletton.com/#uid=23X0o1k004D0jiA01c25102d60pktxRIhPUxnOT1IQPAMnus
 */
-
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Mate+SC);
 *{
 	border: 0; 
@@ -38,7 +38,7 @@ a{
 	position: absolute;
 	top: 0em;
 	left: .5em;
-	font-family: Mate SC;
+	font-family: Josefin Sans;
 	font-size: 4em;
 	color: #555;
 	cursor: pointer;
