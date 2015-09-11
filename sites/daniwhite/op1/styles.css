@@ -1,6 +1,7 @@
 /*
 http://paletton.com/#uid=b092E3q1knhs+dOGHj3wlrYpyujkckpjudf-GqkJxDtJq8vHkDktxRIhPUxnOT1IQPAMnus
 */
+@import url(https://fonts.googleapis.com/css?family=Belgrano);
 @import url(https://fonts.googleapis.com/css?family=Comfortaa);
 
 *{
@@ -10,8 +11,19 @@ http://paletton.com/#uid=b092E3q1knhs+dOGHj3wlrYpyujkckpjudf-GqkJxDtJq8vHkDktxRI
 }
 
 body{
-	background-image: url("Background_1.jpg");
-	background-size: 19.2em 10.8em;
+
+}
+
+#content{
+	margin-left: 20%;
+	width: 60%;
+	padding-top: 5em;
+}
+
+#content  img {
+	margin: 2.5em;
+	float: left;
+	box-shadow: 0em 0em 1em 0em black;
 }
 
 #wrapper{
@@ -21,7 +33,7 @@ body{
 #nameTag{
 	z-index: 5;
 	position: relative;
-	background-color: rgba(255,255,255,.75);
+	background-color: rgba(255,255,255,1);
 	color: #76C043;
 	font-size: 4em;
 	padding: .25em .1em;
@@ -29,11 +41,11 @@ body{
 	box-shadow: 0em 0em 0em .05em rgba(0,0,0,.5);
 	border-bottom-right-radius: 5px; 
 	-webkit-transition: color .2s;
+	font-family: Comfortaa;
 }
 
 #nav {
 	position: fixed;
-	font-family: Comfortaa;
 	vertical-align: middle;
 	width: 100%;
 	padding-top: .1em;
@@ -46,6 +58,7 @@ body{
 }
 
 #nav > ul > li{
+	font-family: Comfortaa;
 	margin-top: 1em;
 	display: block;
 	border-bottom-width: 0em;
