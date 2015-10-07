@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link href = "style.css" rel = "stylesheet"/>
+		<script src = "script.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
@@ -9,21 +10,32 @@
 			<div id = "top">
 				<a href = "./about/about.html">
 				<div style = "background-color: #5599dd;"></div>
-				<div class = "button"> <p> ABOUT </p> </div>
+				<div class = "button" onmouseenter = "hovering('aboutAudio');"> <p> ABOUT </p> </div>
 				</a>
 			</div>
 			<div id = "left">
 				<a href = "./art/art.html">
 				<div style = "background-color: #99dd55;"></div>
-				<div class = "button"> <p> ART </p> </div>
+				<div class = "button" onmouseenter = "hovering('artAudio');"> <p> ART </p> </div>
 				</a>
 			</div>
 			<div id = "right">
 				<a href = "./code/code.html">
 				<div style = "background-color: #ff5e48;"></div>
-				<div class = "button"> <p> CODE </p></div>
+				<div class = "button" onmouseenter = "hovering('codeAudio');">
+					<p> CODE </p>
+				</div>
 				</a>
 			</div>
 		</div>
+		<audio id = "codeAudio">
+		<source src = "hoversound_a.mp3"></source>
+		</audio> 
+		<audio id = "aboutAudio">
+		<source></source>
+		</audio> 
+		<audio id = "artAudio">
+		<source></source>
+		</audio> 
 	</body>
 </html>

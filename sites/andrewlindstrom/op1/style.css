@@ -10,8 +10,9 @@ body{
 
 #wrap{
 	position: absolute;
-	left: 50em;
-	top: 20em;
+	left: 68em;
+	top: 40em;
+	-webkit-transform: rotate(180deg);
 }
 
 #top{
@@ -26,7 +27,7 @@ body{
 	top: -15.25em;
 	left: -2em;
 	text-align: center;
-	-webkit-transition: top .2s cubic-bezier(.33,.72,.47,1), background-color .2s cubic-bezier(.33,.72,.47,1);
+	-webkit-transition: top .5s cubic-bezier(.33,.72,.47,1);
 }
 
 #top > a > div.button:hover{
@@ -46,7 +47,7 @@ body{
 	height: 20em;
 	left: -4.75em;
 	top: -38.35em;
-	-webkit-transition: top .2s cubic-bezier(.33,.72,.47,1), background-color .2s cubic-bezier(.33,.72,.47,1);
+	-webkit-transition: top .5s cubic-bezier(.33,.72,.47,1);
 }
 #right > a > div.button:hover{
 	top: -39.35em;
@@ -65,7 +66,7 @@ body{
 	height: 20em;
 	left: -23.25em;
 	top: -24.5em;
-	-webkit-transition: top .2s cubic-bezier(.33,.72,.47,1), background-color .2s cubic-bezier(.33,.72,.47,1);
+	-webkit-transition: top .5s cubic-bezier(.33,.72,.47,1);
 }
 
 #left > a > div.button:hover{
