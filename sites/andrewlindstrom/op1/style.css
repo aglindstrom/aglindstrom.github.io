@@ -100,3 +100,14 @@ p{
 	font-size: 30pt;
 	margin-top: 2em;
 }
+
+#noSound{
+	position: fixed;
+	top: 2em;
+	left: 2em;
+	width: 4em;
+	height: 4em;
+	background-repeat: no-repeat;
+	background-image: url("speakerON.svg");
+	cursor: pointer;
+}

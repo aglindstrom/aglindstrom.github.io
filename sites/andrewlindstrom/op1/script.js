@@ -2,8 +2,12 @@ var prevsrcnum = 0;
 var elements = 0;
 
 function hovering(){
+	if(document.getElementById("noSound").getAttribute("data-checked") == "true")
+	{
+		return;
+	}
 	var srcnum = (Math.floor(Math.random()*4));
-	var sources = ["hoversound_a.mp3", "hoversound_c.mp3", "hoversound_d.mp3", "hoversound_e.mp3", "hoversound_g.mp3"];
+	var sources = ["hoversound_g.mp3", "hoversound_c.mp3", "hoversound_d.mp3", "hoversound_e.mp3", "hoversound_a.mp3"];
 	
 	if(srcnum == prevsrcnum)
 	{
@@ -16,7 +20,6 @@ function hovering(){
 
 function createAudio(source)
 {
-	console.log("making");
 	var tag = String("audio_tag_" + elements);
 	var audio = document.createElement("audio");
 	var parent = document.getElementById("audioWrap");
@@ -39,24 +42,29 @@ function createAudio(source)
 	//events//
 	addEvent(audio);
 
-	//logs//
-	console.log(elements);
-	console.log(parent);
-	console.log(audio);
-
 }
 
 function destroyAudio(source)
 {
-	console.log("removing");
 	var parent = source.parentNode;
 
 	parent.removeChild(source);
 	elements --;
-	console.log(elements);
 }
 
 function addEvent(audio)
 {
 	audio.addEventListener('ended', function(){destroyAudio(audio)}, false);
+}
+
+function checktoggle()
+{
+	if(document.getElementById("noSound").getAttribute("data-checked") == "false")
+	{
+		document.getElementById("noSound").setAttribute("data-checked", "true");
+		document.getElementById("noSound").style.background = "url('speakerOFF.svg')";
+	}else{
+		document.getElementById("noSound").setAttribute("data-checked", "false");
+		document.getElementById("noSound").style.background = "url('speakerON.svg')";
+	}
 }
