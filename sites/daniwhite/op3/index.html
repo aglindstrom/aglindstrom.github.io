@@ -1,80 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link rel = "stylesheet" href = "style.css"/>
-	<script src = "script.js"></script>
+		<title> Dani White Art</title>
+		<link rel = "stylesheet" href = "./styles.css"/>
+		<script src = "script.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body onload = "init('target');">
-		<button type = "button" onclick = "alternate();"> Alternate </button>
+	<body onload = "init();">
 		<div id = "wrapper">
-			<div id = "transform">
-				<div id = "main">
-					<img src = "ui-03.svg" style = "position: absolute; transform: rotate(-90deg); width: 10em; height: auto; top: 15em;">
-					<img src = "ui-05.svg" style = "position: absolute; width: 19em; height: auto; top: 10em; left: 7em;">
-					<img src = "ui-04.svg" style = "position: absolute; top: -5em;">
-				</div>
-				<div>
-					<ul id = "target">
-						<li id = "nav">
-							<div></div>
-							<div>
-								<img src = "ui-01.svg" style = "width: 3em; height: 3em; opacity: 1; margin: 1em;">
-							</div>
-							<div></div>
-							<div>
-							</div>
-							<div></div>
-							<div>
-								<img src = "ui-02.svg" style = "width: 3em; height: 3em; opacity: 1; margin: 1em; transform: rotate(-90deg);">
-							</div>
-							<div></div>
-						</li>
-						<li>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-							<div class = "btn">
-								<img src = "image_1_tmb.png" style = "width: inherit; height: auto;" onclick="changeView('image_1.png');">
-							</div>
-						</li>
-						<li>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-						</li>
-						<li>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-							<div class = "btn"></div>
-						</li>
-					</ul>
-				</div>
+			<div id = "nameTag">
+				Dani White Art
 			</div>
-			<div id = "viewer">
-				<img src = "" id = "viewImg">
+			<div id = "content">
+				<div id = "column1" class = "col">
+				</div>
+				<div id = "column2" class = "col">
+				</div>
+				<div id = "column3" class = "col">
+				</div>
+				<div id = "column4">
+					<div style = "height: 6em;">
+						<h1></h1>
+						<p></p>
+						<p></p>
+					</div>
+					<div id = "footer">
+						<p>
+							ABOUT ME:
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

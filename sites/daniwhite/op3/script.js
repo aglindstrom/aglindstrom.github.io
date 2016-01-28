@@ -1,73 +1,63 @@
-function init(targetID){
-	var nav = document.getElementById(targetID);
-	var children = nav.childNodes;
-	var grandChildren = new Array();
-	var j = 0;
-	for(var i = 1; i < children.length; i+=2)
-	{
-		grandChildren[j] = children[i].childNodes;
-		j++
-	}
-	console.log(children);
-	console.log(grandChildren);
-	layout(grandChildren);
+function init(){
+    var dopeVector = [0,1,2,3,4,5,6,7,8,9,10,11,13,12,14,15];
+    var columns = [0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,1];
+    var title = ["322", "323", "An Apology", "Aura", "Bitte", "Cross You Mind", "Empty Words and Broken Vessles", "Feet", "Forces", "Forgiveness", "Home", "Honesty", "Joy", "Letting Go", "Our Adventure", "The Fates"];
+    var media = ["Watercolor", "Watercolor", "Graphite", "Watercolor", "Charcoal", "Watercolor", "Charcoal", "Graphite", "Ink", "Watercolor", "Watercolor", "Charcoal", "Watercolor", "Charcoal", "Watercolor", "Graphite"];
+    var dimensions = ["?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?", "?x?"];
+    var current = 0;
+    var totalImgs = 16;
+    for (var i = 0; i < totalImgs; i++)
+    {
+        current = dopeVector[i];
+
+        addImage(current, title[current], media[current], dimensions[current], columns[i]);
+    }
+    var div = document.createElement("div");
+    div.style.height = "10em";
+    document.getElementById("column1").appendChild(div);
 }
 
-function layout(elements)
+function addImage(source, title, media, dimensions, col)
 {
-	var k = 0;
-	for(var i = 0; i < elements.length; i++)
-	{
-		for(var j = 1; j < elements[i].length; j+=2)
-		{	
-			if(k < 3)
-			{
-				elements[i][j].style.top = String((i*7.5)+60) + "em";
-				elements[i][j].style.left = String((i*7.5)+(k*7.5)+57.5) + "em";
-			}
-			else if(k == 3)
-			{
-				elements[i][j].style.top = String((i*7.5)+60) + "em";
-				elements[i][j].style.left = String((i*7.5)+80) + "em";
-			}
-			else if(k > 3)
-			{
-				elements[i][j].style.left = String((i*7.5)+80) + "em";
-				elements[i][j].style.top = String(60+(i*7.5)-((k-3)*7.5)) + "em";
-			}
-			else 
-			{
-			}
-			k++;
-		}
-		k = 0;
-	}
+    var master = document.getElementById("content");
+    var parent = document.getElementById(String("column" + (col+1)));
+    var div = document.createElement("div");
+    var img = document.createElement("img");
+
+    img.src = String("./images/img_" + (source+1) + ".jpg");
+    img.dataset.title = title;
+    img.dataset.media = media;
+    img.dataset.dimensions = dimensions;
+    img.addEventListener( "mousedown", function(){dispMsg(img);}, false);
+
+    div.className = "imgwrap";
+    div.appendChild(img);
+    parent.appendChild(div);
 }
 
-function changeView(image)
+function dispMsg(source)
 {
-	var img = document.getElementById("viewImg");
-	img.src = image;
-	img.style.width = "20em";
-	img.style.height = "auto";
+    var parent = document.getElementById("column4");
+    var children = parent.childNodes[1].childNodes;
+    children[1].innerHTML = source.dataset.title;
+    children[3].innerHTML = String( "Media: " + source.dataset.media);
+    children[5].innerHTML = String( "Dimensions: " + source.dataset.dimensions);
 }
 
-function alternate()
+function checkSmallest(array)
 {
-	var viewer = document.getElementById("viewer");
-	var viewImg = document.getElementById("viewImg");
-
-	if(viewer.style.width == "50em")
-	{
-		viewer.style.width = "70em";
-		viewer.style.left = "40em";
-		viewer.style.backgroundColor = "#777";
-		viewImg.style.marginLeft = "20em";
-	}else
-	{
-		viewer.style.width = "50em";
-		viewer.style.left = "60em";
-		viewer.style.backgroundColor = "#fff";
-		viewImg.style.marginLeft = "2.5em";
-	}
+    var smallest = 0;
+    for(var i = 0; i < array.length; i++)
+    {
+        for( var j = 0; j < array.length; j++)
+        {
+            if(array[j] > array[i])
+            {
+                smallest = i;
+            }
+        }
+    }
+    console.log(array);
+    console.log(smallest);
+    return smallest;
 }
