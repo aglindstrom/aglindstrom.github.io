@@ -24,7 +24,7 @@ function ai(location, x, y, width, height){
 }
 
 function aiUpdate(ai){
-	aiMove(ai);
+	aiFollow(ai);
 	calculate(ai);
 	gravity(ai);
 	stageEdge(ai);
@@ -33,7 +33,19 @@ function aiUpdate(ai){
 function aiRender(sprite){
 	ctx.drawImage(sprite.image, sprite.x, sprite.y, sprite.width, sprite.height);
 }
-
+function aiStop(ai){
+	if(ai.speed >= 0)
+	{
+		ai.speed -= ai.decel;
+	}
+}
 function aiMove(ai){
-	ai.speed = 5;
+	if(ai.speed <= ai.maxspeed)
+	{
+		ai.speed = ai.accel;
+	}
+}
+
+function aiFollow(ai){
+	
 }
