@@ -6,7 +6,6 @@
 function rigid(location, x, y, width, height){
 
 	this.sprite = new sprite(location, x, y, width, height);
-	this.collides = collides;
 	this.hasBeenGenerated = false;
 	
 	this.generate = function(assets){rigidGenerate(this, assets);};
@@ -37,7 +36,7 @@ function rigidCalcXY(x, y)
 	y = 500*Math.rand();
 }
 
-function rigidRender(ctx, sprite, tiled)
+function rigidRender(ctx, sprite)
 {
 	ctx.drawImage(sprite.image, sprite.x, sprite.y, sprite.width, sprite.height);
 }
