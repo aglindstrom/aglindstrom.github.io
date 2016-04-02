@@ -10,8 +10,9 @@ function rigidGenerator(assets){
 }
 
 function makeRigids(rigidGenerator, assets){
+  console.log("generating...");
   var x = 0;
-  var y = 0;
+  var y = 64;
   var width = 32;
   var height = 32;
   var spriteLoc = "./images/enemy.png";
