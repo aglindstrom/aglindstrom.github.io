@@ -20,6 +20,7 @@ function player(location, x, y, width, height){
 	this.deccel = .02;
 	this.jumpTick = 1;
 	this.maxspeed = 10;
+	this.canJump = true;
 	this.collides = true;
 
 	//methods//
@@ -66,9 +67,17 @@ function accelerate(keyboard, player)
 
 function jump(keyboard, player)
 {
-	if(keyboard[32] == true && player.jump >= -2)
+	if(keyboard[32] == true && player.canJump == true)
 	{
 		player.jump -= player.jumpSpeed;
+	}
+	
+	if(player.jump < -2)
+	{
+		player.canJump = false;
+	}
+	else if(player.jump >= 0){
+		player.canJump = true;
 	}
 }
 
