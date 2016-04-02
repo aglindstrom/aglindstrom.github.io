@@ -24,7 +24,7 @@ function ai(location, x, y, width, height){
 }
 
 function aiUpdate(ai){
-	aimove(ai);
+	aiMove(ai);
 	calculate(ai);
 	gravity(ai);
 	stageEdge(ai);
