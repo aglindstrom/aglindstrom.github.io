@@ -24,6 +24,9 @@ function initialize(){
 
 	//initialize lists//
 	keyboard = initKeys();
+	var generators = new Array();
+	loadGenerators(generators);
+	
 	var assets = new Array();
 	loadassets(assets);	
 
@@ -67,5 +70,7 @@ function initKeys(){
 	return keylist;
 }
 
-
+function loadGenerators(generators){
+	generators.push(new rigid())
+}
 
