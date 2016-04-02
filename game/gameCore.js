@@ -24,10 +24,11 @@ function initialize(){
 
 	//initialize lists//
 	keyboard = initKeys();
-	var generators = new Array();
-	loadGenerators(generators);
 	
+	var generators = new Array();
 	var assets = new Array();
+	
+	loadGenerators(generators, assets);
 	loadassets(assets);	
 
 	//main loop//
@@ -71,6 +72,6 @@ function initKeys(){
 }
 
 function loadGenerators(generators){
-	generators.push(new rigid())
+	generators.push(new rigidGenerator(assets));
 }
 
