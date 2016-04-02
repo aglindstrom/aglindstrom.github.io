@@ -24,6 +24,7 @@ function ai(location, x, y, width, height){
 }
 
 function aiUpdate(ai){
+	move(ai);
 	calculate(ai);
 	gravity(ai);
 	stageEdge(ai);
@@ -33,8 +34,6 @@ function aiRender(sprite){
 	ctx.drawImage(sprite.image, sprite.x, sprite.y, sprite.width, sprite.height);
 }
 
-function aiColided(ai)
-{
-	ai.speed = 0;
-	ai.jump = 0;
+function aiMove(ai){
+	ai.speed = 5;
 }
