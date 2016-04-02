@@ -68,10 +68,7 @@ function jump(keyboard, player)
 {
 	if(keyboard[32] == true && player.jump == 0)
 	{
-		player.jump -= player.jumpSpeed/(1/player.jumpTick);
-		player.jumpTick += 1;
-	}else if (keyboard[32] == false){
-		player.jumpTick -= 1;
+		player.jump -= player.jumpSpeed;
 	}
 }
 
