@@ -12,6 +12,8 @@
 var keyboard = new Array();
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
+var gameTime = 0;
+
 function initialize(){
 
 	//initialize canvas//
@@ -30,6 +32,8 @@ function initialize(){
 		update(assets);
 		render(assets);
 		unloadassets(assets);
+		gameTime ++;
+		gameTime = gameTime%60;
 	};
 	setInterval(main, 1);
 
