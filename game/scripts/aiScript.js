@@ -46,11 +46,5 @@ function aiMove(ai){
 }
 
 function aiFollow(ai){
-	if(gameTime < 30)
-	{
-		aiMove(ai);	
-	}else if(gameTime >= 30)
-	{
-		aiStop(ai);
-	}
+	aiMove(ai);
 }
