@@ -71,7 +71,7 @@ function initKeys(){
 	return keylist;
 }
 
-function loadGenerators(generators){
+function loadGenerators(generators, assets){
 	generators.push(new rigidGenerator(assets));
 }
 
