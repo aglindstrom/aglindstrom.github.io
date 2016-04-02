@@ -14,7 +14,7 @@ function ai(location, x, y, width, height){
 	this.accel = .04;
 	this.deccel = .02;
 	this.jumpTick = 1;
-	this.maxspeed = 3;
+	this.maxspeed = 10;
 
 	//methods//
 	this.update = function(){aiUpdate(this);};
