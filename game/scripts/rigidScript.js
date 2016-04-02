@@ -25,15 +25,18 @@ function rigidGenerate(t_rigid, assets)
 	rigidCalcXY(x,y);
 	
 	if(t_rigid.hasBeenGenerated == false){
-		assets.push(new rigid(location, x, y, width, height));
+		for(var i = 0; i < 5; i++)
+		{
+			assets.push(new rigid(location, x+(width*i), y, width, height));
+		}
 		t_rigid.hasBeenGenerated = true;
 	}
 }
 
 function rigidCalcXY(x, y)
 {
-	x = window.width*Math.rand();
-	y = 500*Math.rand();
+	x = window.width * Math.rand();
+	y = 500 * Math.rand();
 }
 
 function rigidRender(ctx, sprite)
