@@ -14,7 +14,7 @@ function player(location, x, y, width, height){
 	//variables//
 	this.speed = 0;
 	this.jump = 0;
-	this.jumpSpeed = 3.5;
+	this.jumpSpeed = 4.5;
 	this.grav = .06;
 	this.accel = .05;
 	this.deccel = .02;
