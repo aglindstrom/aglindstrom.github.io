@@ -10,7 +10,7 @@ function loadassets(assets){
 
 	//assets to be loaded//
 	assets.push(new background("./images/testbg.png", 128, 72));
-	assets.push(new player("./images/char_block.png", 512, 0, 32, 32));
+	assets.push(new player("./images/char_block.png", 860, 0, 32, 32));
 	assets.push(new ai("./images/enemy.png", 32, 0, 32, 32));
 	assets.push(new rigid("./images/riser_big.png", 300, 264, 22, 36, 8, true));
 	assets.push(new rigid("./images/riser_big.png", 1200, 264, 22, 36, 8, true));
