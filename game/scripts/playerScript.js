@@ -66,7 +66,7 @@ function accelerate(keyboard, player)
 
 function jump(keyboard, player)
 {
-	if(keyboard[32] == true)
+	if(keyboard[32] == true && player.jump >= -2)
 	{
 		player.jump -= player.jumpSpeed;
 	}
