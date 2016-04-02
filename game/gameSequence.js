@@ -6,8 +6,11 @@
    	IN GAME SEQUENCE.
 */
 
-function loadassets(assets){
-
+function loadassets(generators,assets){
+	for(var i = 0; i < generators.length; i++)
+	{
+		generators[i].generate(assets);
+	}
 }
 
 function update(assets){
