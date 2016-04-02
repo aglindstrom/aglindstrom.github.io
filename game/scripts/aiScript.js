@@ -41,7 +41,7 @@ function aiStop(ai){
 function aiMove(ai){
 	if(ai.speed <= ai.maxspeed)
 	{
-		ai.speed = ai.accel;
+		ai.speed += ai.accel;
 	}
 }
 
