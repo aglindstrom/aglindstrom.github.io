@@ -15,7 +15,7 @@ function player(location, x, y, width, height){
 	this.speed = 0;
 	this.jump = 0;
 	this.jumpSpeed = .75;
-	this.grav = .05;
+	this.grav = .06;
 	this.accel = .05;
 	this.deccel = .02;
 	this.jumpTick = 1;
@@ -76,7 +76,7 @@ function jump(keyboard, player)
 	{
 		player.canJump = false;
 	}
-	else if(player.jump >= 0){
+	else if(player.jump == 0){
 		player.canJump = true;
 	}
 }
