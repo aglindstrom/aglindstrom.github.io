@@ -5,7 +5,6 @@ function ai(location, x, y, width, height){
 
 	//resources//
 	this.sprite = new sprite(location, x, y, width, height);
-	this.keyboard = keyboard;
 
 	//variables//
 	this.speed = 0;
